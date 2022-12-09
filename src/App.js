@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import SponsorLogin from "./SponsorLogin";
+import Main from "./Main";
+import EventMan from "./EventMan";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
+import React, { useState } from "react";
 
 function App() {
+  const [{ sponsor }, setSponsor] = useStateValue();
+  const [{ Evenman }, setEvenman] = useStateValue();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="app-body">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/sponsor" element={<SponsorLogin />} />
+            <Route path="/eventMan" element={<EventMan />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
