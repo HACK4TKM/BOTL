@@ -1,10 +1,12 @@
-import { doc, collection, addDoc,getDoc ,getDocs,setDoc,where, query} from 'firebase/firestore';
+import { doc, collection, addDoc,getDoc ,getDocs,setDoc,where, query, getCountFromServer} from 'firebase/firestore';
 
 
 export async function DoesUserExist(db,email) {
     const sponsorRef = collection(db, "users");
-    const snapshot = await query(sponsorRef, where("email", "==", email));
-    if (snapshot.empty) {
+    const query_ = await query(sponsorRef, where("email", "==", email));
+    const snapshot = await getCountFromServer(query_);
+    console.log("snapshot",snapshot.data().count);
+    if (snapshot.data().count<0) {
         return false;
     } else {
         return true;

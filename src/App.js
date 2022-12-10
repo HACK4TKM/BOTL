@@ -19,8 +19,8 @@ function App() {
             <Routes>
               {/* <Route path="/" element={<Main />} /> */}
               <Route path="/sponsor">
-                <Route index element={<SponsorLogin />} />
-                <Route path="dashboard" element={<SponDash />} />
+                <Route index element={<Sponsor />} />
+                <Route path="helo" element={<SponDash />} />
               </Route>
             </Routes>
           ) : (
