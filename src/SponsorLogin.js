@@ -11,9 +11,9 @@ function SponsorLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-   
-  const {auth} = useContext(FirebaseContext);
-  const isInvalid = password === '' || email === '';
+
+  const { auth } = useContext(FirebaseContext);
+  const isInvalid = password === "" || email === "";
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
@@ -22,7 +22,7 @@ function SponsorLogin() {
         email,
         password
       );
-      navigate("/sponsor/dashboard");
+      navigate("/sponsor");
     } catch (error) {
       setEmail("");
       setPassword("");
@@ -32,23 +32,30 @@ function SponsorLogin() {
   };
 
   return (
-    <form className="form-container" onSubmit={handleLogin} method='POST'>
-          <p className="subtitle">{error}</p>
-          <input 
-              aria-label="Enter your email address"
-              type="text"
-              placeholder="Email address"
-              className="uname"              
-              onChange={({ target }) => setEmail(target.value)}
-              value={email}  required />
-          <input aria-label="Enter your password"
-              type="password"
-              placeholder="Password"
-              onChange={({ target }) => setPassword(target.value)}
-              value={password}
-              className="pass" required />
-          <button type="submit" className={`submit`}>Submit</button>
-    </form>    
+    <form className="form-container" onSubmit={handleLogin} method="POST">
+      <p className="subtitle">{error}</p>
+      <input
+        aria-label="Enter your email address"
+        type="text"
+        placeholder="Email address"
+        className="uname"
+        onChange={({ target }) => setEmail(target.value)}
+        value={email}
+        required
+      />
+      <input
+        aria-label="Enter your password"
+        type="password"
+        placeholder="Password"
+        onChange={({ target }) => setPassword(target.value)}
+        value={password}
+        className="pass"
+        required
+      />
+      <button type="submit" className={`submit`}>
+        Submit
+      </button>
+    </form>
   );
 }
 

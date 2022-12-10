@@ -3,10 +3,10 @@
     padding: 20px;
     background-color: #702283;
 }
-.header > p{
+.header > h1{
     margin-right: 73vw;
     border-radius: 30px;
-    padding: 8px;
+    padding: 7px;
     background: white;
     width: 10vw;
 }
