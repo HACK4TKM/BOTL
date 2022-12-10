@@ -19,3 +19,22 @@ export async function UserSignedIn(auth) {
         return false;
     }
 }
+
+export async function isSponsor(db,auth) {
+    const user = auth.currentUser;
+    if (user) {
+        const userRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(userRef);
+        if (docSnap.exists()) {
+            if(docSnap.data().role === "sponsor"){
+                return true;
+            }else{
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
