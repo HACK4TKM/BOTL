@@ -5,8 +5,6 @@ import EventMan from "./EventMan";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState } from "react";
 import SponDash from "./SponDash";
-import { app, db } from "./lib/firebaseConfig";
-import SponsorLogin from "./SponsorLogin";
 
 function App() {
   return (
@@ -17,8 +15,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/sponsor">
-                <Route index element={<SponsorLogin />} />
-                <Route path="dashboard" element={<SponDash />} />
+                <Route index element={<Sponsor />} />
+                <Route path="helo" element={<SponDash />} />
               </Route>
             </Routes>
           ) : (
