@@ -1,13 +1,10 @@
 import "./App.css";
-import Sponsor from "./Sponsor";
 import Main from "./Main";
 import EventMan from "./EventMan";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState, useContext } from "react";
-import { FirebaseContext } from "./context/firebaseContext";
+import React from "react";
 import SponDash from "./SponDash";
 import SponsorLogin from "./SponsorLogin";
-import { doc, getDoc } from "firebase/firestore";
 import SponsorSignup from "./SponsorSignup";
 import EvenLogin from "./EvenLogin";
 import EventDash from "./EventDash";
