@@ -6,14 +6,14 @@ import { FirebaseContext } from "./context/firebaseContext";
 import { Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
-function SponsorLogin() {
+function EventLogin() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const { auth } = useContext(FirebaseContext);
-
+  const isInvalid = password === "" || email === "";
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
@@ -22,7 +22,7 @@ function SponsorLogin() {
         email,
         password
       );
-      navigate("/sponsor/dashboard");
+      navigate("/event");
     } catch (error) {
       setEmail("");
       setPassword("");
@@ -32,19 +32,35 @@ function SponsorLogin() {
   };
 
   return (
-    <div className="form-container">
-      <div className="box">
-        <h1 className="heading">LOGIN</h1>
-        <input type="text" placeholder="User Name" className="uname" required />
-        <input
-          type="password"
-          placeholder="Password"
-          className="pass"
-          required
-        />
-        <Link to="/eventMan/dashboard" style={{ textDecoration: "none" }}>
-          <button type="button" className="submit">
+    <div className="sponsorlogin">
+      <div className="form-container">
+        <form onSubmit={handleLogin} method="POST">
+          <p className="subtitle">{error}</p>
+          <input
+            aria-label="Enter your email address"
+            type="text"
+            placeholder="Email address"
+            className="uname"
+            onChange={({ target }) => setEmail(target.value)}
+            value={email}
+            required
+          />
+          <input
+            aria-label="Enter your password"
+            type="password"
+            placeholder="Password"
+            onChange={({ target }) => setPassword(target.value)}
+            value={password}
+            className="pass"
+            required
+          />
+          <button type="submit" className={`submit`}>
             Submit
+          </button>
+        </form>
+        <Link to="/event/signup" style={{ textDecoration: "none" }}>
+          <button type="button" className="btn sinup">
+            Sign Up
           </button>
         </Link>
       </div>
@@ -52,4 +68,4 @@ function SponsorLogin() {
   );
 }
 
-export default SponsorLogin;
+export default EventLogin;

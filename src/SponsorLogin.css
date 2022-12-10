@@ -2,11 +2,12 @@
     margin: 0px;
     padding: 0px;
     display: block;
+    background-color: #702283;
 }
 
 .form-container{
     
-    height: 100vh;
+    height: 95vh;
     width: 100vw;
     background: #702283;
     position: relative; 
@@ -50,7 +51,6 @@
     font-weight: bold;
     padding: 1rem;
     border-radius: 16px;
-    border:none;
     margin: auto;
     width:200px;
     height:57px;
@@ -79,5 +79,5 @@
     font-size: medium;
     display: block;
     position: relative;
-    transform: translate(0px , -400px);
+    transform: translate(0px , 50px);
 }

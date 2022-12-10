@@ -11,7 +11,7 @@ function Main() {
             Sponsor Login
           </button>
         </Link>
-        <Link to="/eventman" style={{ textDecoration: "none" }}>
+        <Link to="/event/login" style={{ textDecoration: "none" }}>
           <button type="button" className="btn">
             Event Manager Login
           </button>
