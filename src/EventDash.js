@@ -4,6 +4,7 @@ import Slider from "./Slider";
 import { useState } from "react";
 import { FirebaseContext } from "./context/firebaseContext";
 import { useContext } from "react";
+import Card from "./components/eventCard";
 
 function EventDash() {
   const { db, auth } = useContext(FirebaseContext);
@@ -21,24 +22,9 @@ function EventDash() {
           <p>Area of Interest</p>
         </div>
         <div className="events">
-          <div className="card">
-            <h1 className="eventname">Microsoft</h1>
-            <p className="college">Tech</p>
-            <p className="ind">On</p>
-            <h1 className="ins">20-12-2023</h1>
-          </div>
-          <div className="card">
-            <h1 className="eventname">Nykaa</h1>
-            <p className="college">Fashion</p>
-            <p className="ind">On</p>
-            <h1 className="ins">20-12-2023</h1>
-          </div>
-          <div className="card">
-            <h1 className="eventname">Zerodha</h1>
-            <p className="college">Finance</p>
-            <p className="ind">On</p>
-            <h1 className="ins">20-12-2023</h1>
-          </div>
+          <Card eventname="Microsoft" college="Tech" date="$1k-$5k" />
+          <Card eventname="Nykaa" college="Fashion" date="$500-$1k" />
+          <Card eventname="Zerodha" college="FinTech" date="$700-$1650" />
         </div>
       </div>
     </div>

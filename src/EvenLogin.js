@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./SponsorLogin.css";
 import { FirebaseContext } from "./context/firebaseContext";
 import { Link } from "react-router-dom";
+import Card from "./components/eventCard";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 function EventLogin() {
