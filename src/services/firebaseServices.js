@@ -1,8 +1,7 @@
-import {app,db,auth} from '../lib/firebaseConfig';
 import { doc, collection, addDoc,getDoc ,getDocs,setDoc,where, query} from 'firebase/firestore';
 
 
-export async function DoesUserExist(email) {
+export async function DoesUserExist(db,email) {
     const sponsorRef = collection(db, "users");
     const snapshot = await query(sponsorRef, where("email", "==", email));
     if (snapshot.empty) {
@@ -12,7 +11,7 @@ export async function DoesUserExist(email) {
     }
 }
 
-export async function UserSignedIn() {
+export async function UserSignedIn(auth) {
     const user = auth.currentUser;
     if (user) {
         return true;
