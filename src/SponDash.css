@@ -24,11 +24,13 @@
     width: 5vw;
     flex-direction: column;
     padding: 2vh    ;
-    height: 75vh;
+    height: 55vh;
     background-color: rgb(255, 255, 255);
-    top: 20vh;
+    top: 10vh;
 }
 .sidebar > p{
+    position: relative;
+    top: -10vh;
     margin: 30px;
 }
 .events{
@@ -37,6 +39,7 @@
     background-color: rgb(237, 237, 237);
     border-bottom: 1px solid rgb(164, 164, 164);
     border-radius: 0px 0px 30px 0px;
+    height: 80vh;
 }
 .notHeader{
     display: flex;

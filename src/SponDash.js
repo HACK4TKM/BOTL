@@ -1,5 +1,7 @@
 import React from "react";
 import "./SponDash.css";
+import Slider from "./Slider";
+
 function SponDash() {
   return (
     <div className="SponDash">
@@ -10,6 +12,7 @@ function SponDash() {
       <div className="notHeader">
         <div className="sidebar">
           <p>Budget</p>
+          <Slider />
           <p>Location</p>
         </div>
         <div className="events">
