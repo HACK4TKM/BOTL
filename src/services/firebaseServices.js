@@ -15,6 +15,7 @@ export async function DoesUserExist(db,email) {
 
 export async function UserSignedIn(auth) {
     const user = auth.currentUser;
+    console.log("Hello")
     if (user) {
         return true;
     } else {
@@ -22,8 +23,7 @@ export async function UserSignedIn(auth) {
     }
 }
 
-export async function isSponsor(db,auth) {
-    const user = auth.currentUser;
+export async function isSponsor(db,user) {
     if (user) {
         const userRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(userRef);

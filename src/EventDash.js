@@ -5,13 +5,13 @@ import { useState } from "react";
 import { FirebaseContext } from "./context/firebaseContext";
 import { useContext } from "react";
 
-function SponDash() {
+function EventDash() {
   const { db, auth } = useContext(FirebaseContext);
   const user = auth.currentUser;
   return (
-    <div className="SponDash">
+    <div className="EventDash">
       <div className="header">
-        <p>user.displayName</p>
+        <p>BOTL</p>
         <input type="text" placeholder="Search.."></input>
       </div>
       <div className="notHeader">
@@ -28,4 +28,4 @@ function SponDash() {
   );
 }
 
-export default SponDash;
+export default EventDash;
