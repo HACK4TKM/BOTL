@@ -1,16 +1,17 @@
 import "./App.css";
-import Sponsor from "./Sponsor";
 import Main from "./Main";
 import EventMan from "./EventMan";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState,useContext } from "react";
+import React, {useContext } from "react";
 import { FirebaseContext } from "./context/firebaseContext";
+import Protected from "./helper/Protected";
 import SponDash from "./SponDash";
 import SponsorLogin from "./SponsorLogin";
-import {doc,getDoc} from 'firebase/firestore';
 import SponsorSignup from "./SponsorSignup";
 
+
 function App() { 
+  const {auth} = useContext(FirebaseContext);
 return (
   <div className="App">
     <div className="app-body">
@@ -20,10 +21,10 @@ return (
         <Route path="/sponsor/login" element={<SponsorLogin />} />
         <Route path="/sponsor/signup" element={<SponsorSignup />} />
         <Route path="/sponsor">
-          <Route index element={<SponDash />} />
+          <Route index element={<Protected user={auth.currentUser}><SponDash/></Protected>} />
         </Route>
         <Route path="/event-manager" >
-          <Route index element={<EventMan />} />
+          <Route index element={<Protected user={auth.currentUser}><EventMan /></Protected>} />
         </Route>
         </Routes>
       </BrowserRouter>
