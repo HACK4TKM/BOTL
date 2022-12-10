@@ -11,9 +11,9 @@ function SponsorLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
-  const { auth } = useContext(FirebaseContext);
-
+   
+  const {auth} = useContext(FirebaseContext);
+  const isInvalid = password === '' || email === '';
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
@@ -32,23 +32,23 @@ function SponsorLogin() {
   };
 
   return (
-    <div className="form-container">
-      <div className="box">
-        <h1 className="heading">LOGIN</h1>
-        <input type="text" placeholder="User Name" className="uname" required />
-        <input
-          type="password"
-          placeholder="Password"
-          className="pass"
-          required
-        />
-        <Link to="/sponsor/dashboard" style={{ textDecoration: "none" }}>
-          <button type="button" className="submit">
-            Submit
-          </button>
-        </Link>
-      </div>
-    </div>
+    <form className="form-container" onSubmit={handleLogin} method='POST'>
+          <p className="subtitle">{error}</p>
+          <input 
+              aria-label="Enter your email address"
+              type="text"
+              placeholder="Email address"
+              className="uname"              
+              onChange={({ target }) => setEmail(target.value)}
+              value={email}  required />
+          <input aria-label="Enter your password"
+              type="password"
+              placeholder="Password"
+              onChange={({ target }) => setPassword(target.value)}
+              value={password}
+              className="pass" required />
+          <button type="submit" className={`submit`}>Submit</button>
+    </form>    
   );
 }
 

@@ -3,37 +3,33 @@ import Sponsor from "./Sponsor";
 import Main from "./Main";
 import EventMan from "./EventMan";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useContext, useState } from "react";
+import React, { useState,useContext } from "react";
+import { FirebaseContext } from "./context/firebaseContext";
 import SponDash from "./SponDash";
 import SponsorLogin from "./SponsorLogin";
-import Protected from "./helper/Protected";
-import { FirebaseContext } from "./context/firebaseContext";
-import { isSponsor } from "./services/firebaseServices";
-import EventDash from "./EventDash.js";
-import EvenLogin from "./EvenLogin.js";
+import {doc,getDoc} from 'firebase/firestore';
+import SponsorSignup from "./SponsorSignup";
 
-function App() {
-  const { auth, db } = useContext(FirebaseContext);
-  const user = auth.currentUser;
-  return (
-    <div className="App">
-      <div className="app-body">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/sponsor">
-              <Route index element={<SponsorLogin />} />
-              <Route path="dashboard" element={<SponDash />} />
-            </Route>
-            <Route path="/eventMan">
-              <Route index element={<EvenLogin />} />
-              <Route path="dashboard" element={<EventDash />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </div>
+function App() { 
+return (
+  <div className="App">
+    <div className="app-body">
+      <BrowserRouter>
+      <Routes>
+        <Route index element = {<Main />} />
+        <Route path="/sponsor/login" element={<SponsorLogin />} />
+        <Route path="/sponsor/signup" element={<SponsorSignup />} />
+        <Route path="/sponsor">
+          <Route index element={<SponDash />} />
+        </Route>
+        <Route path="/event-manager" >
+          <Route index element={<EventMan />} />
+        </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+  </div>
+);
 }
 
 export default App;

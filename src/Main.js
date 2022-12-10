@@ -6,7 +6,7 @@ function Main() {
   return (
     <div className="Main">
       <div className="box">
-        <Link to="/sponsor" style={{ textDecoration: "none" }}>
+        <Link to="/sponsor/login" style={{ textDecoration: "none" }}>
           <button type="button" className="btn">
             Sponsor Login
           </button>

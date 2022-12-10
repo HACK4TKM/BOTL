@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState, useContext } from 'react';
-import { DoesUserExist,isSponsor,UserSignedIn } from './services/firebaseServices';
 import { useNavigate } from 'react-router-dom';
 import "./SponsorLogin.css"
 import { FirebaseContext } from './context/firebaseContext';
@@ -18,30 +17,24 @@ function SponsorSignup() {
   const {auth,db} = useContext(FirebaseContext);
   
   const handleSignUp = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     console.log("email: ",email);
-    const usernameExist = DoesUserExist(db,email);
       try{
-        if (usernameExist){
-            const createdUser = await createUserWithEmailAndPassword(auth,email, password);
-            await updateProfile(createdUser.user,{
-                displayName: companyName,
-            });
+        const createdUser = await createUserWithEmailAndPassword(auth,email, password);
+        await updateProfile(createdUser.user,{
+            displayName: companyName,
+        });
 
-            const userRef = doc(db, "users", createdUser.user.uid);
-            await setDoc(userRef, {
-                uid : createdUser.user.uid,
-                email: email,
-                companyName: companyName,
-                role: "sponsor",
-            });
-            console.log("createdUser: ",createdUser.user.displayName);
+        const userRef = doc(db, "users", createdUser.user.uid);
+        await setDoc(userRef, {
+            uid : createdUser.user.uid,
+            email: email,
+            companyName: companyName,
+            role: "sponsor",
+        });
+        console.log("createdUser: ",createdUser.user.displayName);
 
-            navigate("/sponsor/dashboard");}
-        else{
-            console.log("username already exists");
-        }
-      }
+        navigate("/sponsor");}
       catch(error){
         console.log("error",error);
         setEmail("");
@@ -54,9 +47,35 @@ function SponsorSignup() {
 
 
   return (
-    <div>SponsorSignup</div>
-  )
+    <form className="form-container" onSubmit={handleSignUp} method='POST'>
+          <p className="subtitle">{error}</p>
+          <input
+            aria-label='Enter your company name'
+            type='text'
+            placeholder='Company Name'
+            className='uname'
+            onChange={({ target }) => setCompanyName(target.value)}
+            value={companyName}
+            required
+          />
+          <input 
+              aria-label="Enter your email address"
+              type="text"
+              placeholder="Email address"
+              className="uname"              
+              onChange={({ target }) => setEmail(target.value)}
+              value={email}  required />
+          <input aria-label="Enter password"
+              type="password"
+              placeholder="Password"
+              onChange={({ target }) => setPassword(target.value)}
+              value={password}
+              className="pass" required />
+          <button type="submit" className={`submit`}>Submit</button>
+    </form>    
+  );
 }
+
 
 
 export default SponsorSignup
