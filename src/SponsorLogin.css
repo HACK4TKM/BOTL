@@ -1,27 +1,53 @@
-body{
-	margin:0;
-	color:#c6c8d2;
-	background:#b465c8;
-	font:600 16px/18px 'Open Sans',sans-serif;
-}
+
 
 .form-container{
-    display:flex;
-    background-color: #b465c8;
-    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: #b465c8;
+    position: relative; 
 
 }
-.uname,.pass,.submit{
+.uname,.pass{
+    font-size: 16px;
+    position: relative;
     display:block;
-    width:300px;
-    height:60px;
-    top:26vh;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.30);
+    width:350px;
+    height:65px;
+    top:35vh;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.60);
     border:none;
     border-radius: 20px;
     padding-left: 25px;
     margin: auto;
     margin-bottom: 20px;
+}
+.submit{
+    display:block;
+    position: relative;
+    top:36vh;
+    background-color: white;
+    color: #1e1e1f;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 16px;
+    border:none;
+    margin: auto;
+    width:200px;
+    height:57px;
+    transition: background-color 0.15s;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.60);
+
+    
+}
+.submit:hover{
+    background-color: rgb(221, 221, 221);
+}
+.inp{
+    position: relative;
+    background-color: white;
+    top: -10vh;
 }
 .uname:focus,.pass:focus,.submit:focus{
     outline: none;
