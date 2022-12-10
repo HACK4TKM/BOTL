@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function Sponsor() {
   return (
     <div className="Sponsor">
-      <div className="sponsor-body">Hello</div>
+      <div className="sponsor-body"></div>
     </div>
   );
 }
