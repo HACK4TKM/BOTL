@@ -4,9 +4,13 @@
     background-color: #702283;
 }
 .header > h1{
+    display: flex;
     margin-right: 73vw;
     border-radius: 30px;
     padding: 7px;
+    padding-right:0px ;
+    align-items: center;
+    justify-content: center;
     background: white;
     width: 10vw;
 }

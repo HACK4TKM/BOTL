@@ -7,8 +7,9 @@
 .box{
     position: relative;
     width: 36vw;
-    top: 100vh;
+    top: 6vh;
     height: 48vh;
+    transform: translate(0 , 150px);
     left: 32vw;
     border-radius: 30px;
     background: white;
@@ -37,12 +38,11 @@
     border-radius: 30px;
     text-decoration: none;
     font-size: 24px;
-    transition: opacity 0.5s linear;
+    transition: all 0.3s ease-in;
     
 
 }
 .btn:hover{
-    animation-duration: 0.5s;
     opacity:0.75;
     height: 60px;
     width: 23vw;

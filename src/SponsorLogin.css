@@ -1,9 +1,14 @@
-
+.sponsorlogin{
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
 
 .form-container{
+    
     height: 100vh;
     width: 100vw;
-    background: #b465c8;
+    background: #702283;
     position: relative; 
     
 }
@@ -34,12 +39,11 @@
 }
 .box{
     position: relative;
-    top: 0vh;
 }
 .submit{
     display:block;
     position: relative;
-    top:20vh;
+    top:17vh;
     background-color: white;
     color: #1e1e1f;
     font-size: 16px;
@@ -66,4 +70,14 @@
 .uname:focus,.pass:focus,.submit:focus{
     outline: none;
 
+}
+.sinup{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    width: 200px;
+    font-size: medium;
+    display: block;
+    position: relative;
+    transform: translate(0px , -400px);
 }

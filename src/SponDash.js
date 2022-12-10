@@ -11,7 +11,7 @@ function SponDash() {
   return (
     <div className="SponDash">
       <div className="header">
-        <p>{user.displayName}</p>
+        <h1>{user.displayName}</h1>
         <input type="text" placeholder="Search.."></input>
       </div>
       <div className="notHeader">
