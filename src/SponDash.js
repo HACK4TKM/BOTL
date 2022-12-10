@@ -17,11 +17,27 @@ function SponDash() {
       <div className="notHeader">
         <div className="sidebar">
           <p>Budget</p>
-          <Slider />
           <p>Location</p>
         </div>
         <div className="events">
-          <div className="card">Event 1</div>
+          <div className="card">
+            <h1 className="eventname">Hestia</h1>
+            <p className="college">TKMCE</p>
+            <p className="ind">On</p>
+            <h1 className="ins">20-12-2023</h1>
+          </div>
+          <div className="card">
+            <h1 className="eventname">Dhwani</h1>
+            <p className="college">CET</p>
+            <p className="ind">On</p>
+            <h1 className="ins">20-12-2023</h1>
+          </div>
+          <div className="card">
+            <h1 className="eventname">Dhyuthi</h1>
+            <p className="college">GECT</p>
+            <p className="ind">On</p>
+            <h1 className="ins">20-12-2023</h1>
+          </div>
         </div>
       </div>
     </div>

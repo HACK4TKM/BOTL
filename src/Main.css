@@ -3,14 +3,11 @@
 }
 
 .box{
-    display: block;
     position: relative;
     width: 36vw;
+    top: 100vh;
     height: 48vh;
-    top:26vh;
     left: 32vw;
-    justify-content: center;
-    align-items: center;
     border-radius: 30px;
     background: white;
 }

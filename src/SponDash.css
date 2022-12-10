@@ -7,6 +7,8 @@
     margin-right: 73vw;
     border-radius: 30px;
     padding: 8px;
+    background: white;
+    width: 10vw;
 }
 .header > input{
     position: relative;
@@ -24,14 +26,16 @@
     width: 5vw;
     flex-direction: column;
     padding: 2vh    ;
-    height: 55vh;
+    height: 76vh;
     background-color: rgb(255, 255, 255);
-    top: 10vh;
+    align-items: center;
+    justify-content: center;
 }
 .sidebar > p{
-    position: relative;
-    top: -10vh;
     margin: 30px;
+    background: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
 }
 .events{
     flex: 0.75;
@@ -45,11 +49,60 @@
     display: flex;
 }
 .card{
+    display: flex;
     color: rgb(0, 0, 0);
-    border: 3px solid #702283;
+    border: 2px solid #702283;
     height: 60px;
     margin: 20px 30px;
     padding: 30px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 30px;
+    box-shadow: -10px 15px 20px -6px rgba(192, 189, 189, 0.7) ;
+
+}
+.eventname{
+    background-color: white;
+    position: relative;
+    width: fit-content;
+}
+.college{
+    position: relative;
+    border-radius: 20px;
+    width: 5vw;
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+
+}
+.date{
+    position: relative;
+
+    background-color: white;
+    font-size: 12px;
+}
+/* .free{
+    border-radius: 30px;
+    position: relative;
+    left: 370px;
+    height: 121px;
+    bottom: 30px;
+    width: 490px;
+    background-color: #702283;
+} */
+.ins{
+    color: #702283;
+    background-color: white;
+    position: relative;
+    left: 450px;
+    width: fit-content;
+    font-size: 50px;
+    top: -40px;
+}
+.ind{
+    background-color: white;
+    color: #702283;
+    position: relative;
+    left: 440px;
+    bottom: 30px;
+    width: fit-content;
 }
