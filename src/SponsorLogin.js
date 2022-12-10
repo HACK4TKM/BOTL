@@ -22,7 +22,7 @@ function SponsorLogin() {
         email,
         password
       );
-      navigate("/sponsor/dashboard");
+      navigate("/sponsor");
     } catch (error) {
       setEmail("");
       setPassword("");
@@ -32,6 +32,7 @@ function SponsorLogin() {
   };
 
   return (
+    <div>
     <form className="form-container" onSubmit={handleLogin} method='POST'>
           <p className="subtitle">{error}</p>
           <input 
@@ -48,7 +49,13 @@ function SponsorLogin() {
               value={password}
               className="pass" required />
           <button type="submit" className={`submit`}>Submit</button>
-    </form>    
+    </form>  
+    <Link to="/sponsor/signup" style={{ textDecoration: "none" }}>
+          <button type="button" className="btn">
+            Sign Up
+          </button>
+    </Link>
+    </div>  
   );
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./SponsorLogin.css"
@@ -47,6 +48,7 @@ function SponsorSignup() {
 
 
   return (
+    <div>
     <form className="form-container" onSubmit={handleSignUp} method='POST'>
           <p className="subtitle">{error}</p>
           <input
@@ -73,6 +75,12 @@ function SponsorSignup() {
               className="pass" required />
           <button type="submit" className={`submit`}>Submit</button>
     </form>    
+    <Link to="/sponsor/signup" style={{ textDecoration: "none" }}>
+      <button type="button" className="btn">
+        Sign Up
+      </button>
+    </Link>
+    </div>
   );
 }
 

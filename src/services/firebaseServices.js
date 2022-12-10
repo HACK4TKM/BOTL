@@ -1,4 +1,4 @@
-import { doc, collection, addDoc,getDoc ,getDocs,setDoc,where, query, getCountFromServer} from 'firebase/firestore';
+import { doc, collection,getDoc ,where, query, getCountFromServer} from 'firebase/firestore';
 
 
 export async function DoesUserExist(db,email) {
