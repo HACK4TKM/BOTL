@@ -21,8 +21,6 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/login" element={<SponsorLogin />} />
-            <Route path="/sign-up" element={<Sponsor />} />
             <Route path="/sponsor">
               <Route index element={<SponsorLogin />} />
               <Route path="dashboard" element={<SponDash />} />
