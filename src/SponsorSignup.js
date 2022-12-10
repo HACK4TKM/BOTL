@@ -75,9 +75,9 @@ function SponsorSignup() {
               className="pass" required />
           <button type="submit" className={`submit`}>Submit</button>
     </form>    
-    <Link to="/sponsor/signup" style={{ textDecoration: "none" }}>
+    <Link to="/sponsor/login" style={{ textDecoration: "none" }}>
       <button type="button" className="btn">
-        Sign Up
+        Sign in
       </button>
     </Link>
     </div>
