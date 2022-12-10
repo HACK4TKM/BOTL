@@ -5,7 +5,18 @@
     width: 100vw;
     background: #b465c8;
     position: relative; 
-
+    
+}
+.heading{
+    background: white;
+    margin: auto;
+    position: relative;
+    color: #702283;
+    width: fit-content;
+    margin-top: 20vh;
+    margin-bottom: 0px;
+    top: 30px;
+    font-size: 35px;
 }
 .uname,.pass{
     font-size: 16px;
@@ -13,7 +24,7 @@
     display:block;
     width:350px;
     height:65px;
-    top:35vh;
+    top:12vh;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.60);
     border:none;
     border-radius: 20px;
@@ -21,10 +32,14 @@
     margin: auto;
     margin-bottom: 20px;
 }
+.box{
+    position: relative;
+    top: 0vh;
+}
 .submit{
     display:block;
     position: relative;
-    top:36vh;
+    top:20vh;
     background-color: white;
     color: #1e1e1f;
     font-size: 16px;
@@ -47,7 +62,6 @@
 .inp{
     position: relative;
     background-color: white;
-    top: -10vh;
 }
 .uname:focus,.pass:focus,.submit:focus{
     outline: none;
