@@ -32,30 +32,37 @@ function SponsorLogin() {
   };
 
   return (
-    <div>
-    <form className="form-container" onSubmit={handleLogin} method='POST'>
-          <p className="subtitle">{error}</p>
-          <input 
-              aria-label="Enter your email address"
-              type="text"
-              placeholder="Email address"
-              className="uname"              
-              onChange={({ target }) => setEmail(target.value)}
-              value={email}  required />
-          <input aria-label="Enter your password"
-              type="password"
-              placeholder="Password"
-              onChange={({ target }) => setPassword(target.value)}
-              value={password}
-              className="pass" required />
-          <button type="submit" className={`submit`}>Submit</button>
-    </form>  
-    <Link to="/sponsor/signup" style={{ textDecoration: "none" }}>
-          <button type="button" className="btn">
-            Sign Up
-          </button>
-    </Link>
-    </div>  
+    <div className="sponsorlogin">
+      <form className="form-container" onSubmit={handleLogin} method="POST">
+        <p className="subtitle">{error}</p>
+        <input
+          aria-label="Enter your email address"
+          type="text"
+          placeholder="Email address"
+          className="uname"
+          onChange={({ target }) => setEmail(target.value)}
+          value={email}
+          required
+        />
+        <input
+          aria-label="Enter your password"
+          type="password"
+          placeholder="Password"
+          onChange={({ target }) => setPassword(target.value)}
+          value={password}
+          className="pass"
+          required
+        />
+        <button type="submit" className={`submit`}>
+          Submit
+        </button>
+      </form>
+      <Link to="/sponsor/signup" style={{ textDecoration: "none" }}>
+        <button type="button" className="btn sinup">
+          Sign Up
+        </button>
+      </Link>
+    </div>
   );
 }
 
