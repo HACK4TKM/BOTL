@@ -1,0 +1,29 @@
+body{
+	margin:0;
+	color:#c6c8d2;
+	background:#b465c8;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
+
+.form-container{
+    display:flex;
+    background-color: #b465c8;
+    position: relative;
+
+}
+.uname,.pass,.submit{
+    display:block;
+    width:300px;
+    height:60px;
+    top:26vh;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.30);
+    border:none;
+    border-radius: 20px;
+    padding-left: 25px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.uname:focus,.pass:focus,.submit:focus{
+    outline: none;
+
+}

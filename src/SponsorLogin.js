@@ -35,7 +35,19 @@ function SponsorLogin() {
   handleLogin();
 
   return (
-    <div>SponsorLogin</div>
+    <div className="form-container">
+      <form>
+      <div className="input-container">
+          <input type="text" placeholder="User Name" className="uname" required />
+        </div>
+        <div className="input-container">
+          <input type="password" placeholder="Password" className="pass" required />
+        </div>
+        <div className="button-container">
+          <input type="submit" className="submit"/>
+        </div>
+      </form>
+    </div>
   )
 }
 
