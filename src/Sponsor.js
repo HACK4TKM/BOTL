@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Main from "./Main";
+import SponDash from "./SponDash";
+import EventMan from "./EventMan";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function Sponsor() {
   return (
-    <div></div>
-  )
+    <div className="Sponsor">
+      <div className="sponsor-body"></div>
+    </div>
+  );
 }
 
-export default Sponsor
+export default Sponsor;
