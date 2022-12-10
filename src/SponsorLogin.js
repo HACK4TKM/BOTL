@@ -11,9 +11,9 @@ function SponsorLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-   
-  const {auth} = useContext(FirebaseContext);
-  const isInvalid = password === '' || email === '';
+
+  const { auth } = useContext(FirebaseContext);
+  const isInvalid = password === "" || email === "";
   const handleLogin = async (event) => {
     event.preventDefault();
     try {

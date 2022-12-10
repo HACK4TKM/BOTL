@@ -1,5 +1,7 @@
-*{
+.Main{
     background-color: #702283;
+    width: 100vw;
+    height: 100vh;
 }
 
 .box{
