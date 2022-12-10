@@ -5,8 +5,6 @@ import EventMan from "./EventMan";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState } from "react";
 import SponDash from "./SponDash";
-import { app, db } from "./lib/firebaseConfig";
-import SponsorLogin from "./SponsorLogin";
 import { isSponsor } from "./services/firebaseServices";
 
 function App() {
