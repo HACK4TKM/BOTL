@@ -48,7 +48,7 @@ function SponsorSignup() {
 
 
   return (
-    <div>
+    <div className='cont'>
     <form className="form-container" onSubmit={handleSignUp} method='POST'>
           <p className="subtitle">{error}</p>
           <input
@@ -75,11 +75,7 @@ function SponsorSignup() {
               className="pass" required />
           <button type="submit" className={`submit`}>Submit</button>
     </form>    
-    <Link to="/sponsor/login" style={{ textDecoration: "none" }}>
-      <button type="button" className="btn">
-        Sign in
-      </button>
-    </Link>
+    
     </div>
   );
 }
